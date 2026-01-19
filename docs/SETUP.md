@@ -26,7 +26,7 @@ cd ceo-ralph
 ### Step 2: Install MCP Server Dependencies
 
 ```bash
-cd mcp-codex-worker
+cd plugins/ceo-ralph/mcp-codex-worker
 npm install
 ```
 
@@ -90,7 +90,7 @@ Add the MCP server to your Claude Code configuration.
     "codex-worker": {
       "type": "stdio",
       "command": "node",
-      "args": ["/path/to/ceo-ralph/mcp-codex-worker/dist/index.js"],
+      "args": ["/path/to/ceo-ralph/plugins/ceo-ralph/mcp-codex-worker/dist/index.js"],
       "env": {
         "OPENAI_API_KEY": "${OPENAI_API_KEY}"
       }
@@ -133,7 +133,7 @@ Restart Claude Code to load the new MCP server and plugin.
 ## Post-Install Checklist (Required)
 
 1. Build MCP server (if not already built):
-  - `cd mcp-codex-worker && npm install && npm run build`
+  - `cd plugins/ceo-ralph/mcp-codex-worker && npm install && npm run build`
 2. Set `OPENAI_API_KEY` in your environment
 3. Add the MCP server entry to `.claude/mcp.json`
 4. Restart Claude Code

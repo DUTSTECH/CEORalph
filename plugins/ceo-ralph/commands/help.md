@@ -78,13 +78,13 @@ Environment variables:
 
 ### Post-Install Checklist
 
-1. Build MCP server: `cd mcp-codex-worker && npm install && npm run build`
+1. Build MCP server: `cd plugins/ceo-ralph/mcp-codex-worker && npm install && npm run build`
 2. Set `OPENAI_API_KEY`
 3. Add MCP entry in `.claude/mcp.json`
 4. Restart Claude Code
 5. Run `/ceo-ralph:execute` once to confirm MCP connectivity
 
-See [docs/SETUP.md](docs/SETUP.md) for the full setup guide.
+See https://github.com/dutsAI/ceo-ralph/blob/main/docs/SETUP.md for the full setup guide.
 
 ### More Help
 

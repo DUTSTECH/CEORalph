@@ -45,10 +45,10 @@ git clone https://github.com/dutsAI/ceo-ralph.git
 cd ceo-ralph
 
 # Install MCP server dependencies
-cd mcp-codex-worker
+cd plugins/ceo-ralph/mcp-codex-worker
 npm install
 npm run build
-cd ..
+cd ../../..
 
 # Configure MCP in Claude Code
 # Add to your .claude/mcp.json:
@@ -57,7 +57,7 @@ cd ..
     "codex-worker": {
       "type": "stdio",
       "command": "node",
-      "args": ["./mcp-codex-worker/dist/index.js"],
+      "args": ["./plugins/ceo-ralph/mcp-codex-worker/dist/index.js"],
       "env": {
         "OPENAI_API_KEY": "${OPENAI_API_KEY}"
       }
