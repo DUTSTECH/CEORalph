@@ -1,3 +1,7 @@
+---
+description: Show current spec status and progress
+---
+
 # /ceo-ralph:status
 
 Show current spec status and progress.

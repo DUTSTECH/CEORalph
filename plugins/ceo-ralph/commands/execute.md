@@ -1,3 +1,7 @@
+---
+description: Start the execution loop with Codex workers
+---
+
 # /ceo-ralph:execute
 
 Start the execution loop with Codex workers.

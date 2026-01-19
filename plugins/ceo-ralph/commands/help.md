@@ -1,3 +1,7 @@
+---
+description: Show help and available commands
+---
+
 # /ceo-ralph:help
 
 Show help and available commands.

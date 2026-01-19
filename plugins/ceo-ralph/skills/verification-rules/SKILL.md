@@ -1,3 +1,8 @@
+---
+name: verification-rules
+description: 4-layer verification system for task completion. Use when verifying that a task has been fully completed before marking it done.
+---
+
 # Verification Rules Skill
 
 This skill defines the 4-layer verification system used by CEO Ralph.
@@ -199,63 +204,45 @@ Result: {PASS/FAIL}
 
 | Layer | Check | Status |
 |-------|-------|--------|
-| 1 | Contradiction Detection | {✓ PASS / ✗ FAIL} |
-| 2 | Uncommitted Files | {✓ PASS / ✗ FAIL} |
-| 3 | Checkmark in tasks.md | {✓ PASS / ✗ FAIL} |
-| 4 | Completion Signal | {✓ PASS / ✗ FAIL} |
+| 1 | Contradiction Detection | {PASS/FAIL} |
+| 2 | Uncommitted Files | {PASS/FAIL} |
+| 3 | Checkmark in tasks.md | {PASS/FAIL} |
+| 4 | Completion Signal | {PASS/FAIL} |
 
-**Overall**: {VERIFIED ✓ / FAILED ✗}
-
-{If FAILED}
-**Failed Layers**: {list}
-**Action**: {what to do}
+**Overall**: {VERIFIED/FAILED}
 ```
 
 ## Quality Gate Verification
 
-For `[VERIFY]` tasks, also run quality commands:
+After the 4 layers pass, run quality gates:
+
+```bash
+# Discover and run quality commands
+npm run lint        # or discovered lint command
+npm run test        # or discovered test command
+npm run build       # or discovered build command
+npm run check-types # if TypeScript
+```
+
+### Quality Gate Report
 
 ```markdown
-## Quality Gate Verification
+## Quality Gates: Task {id}
 
-### Command: `{lint command}`
-Exit Code: {code}
-Output:
-```
-{output}
-```
-Status: {PASS if code=0, FAIL otherwise}
+| Gate | Command | Status | Output |
+|------|---------|--------|--------|
+| Lint | npm run lint | {PASS/FAIL} | {summary} |
+| Test | npm test | {PASS/FAIL} | {summary} |
+| Build | npm run build | {PASS/FAIL} | {summary} |
+| Types | npm run check-types | {PASS/FAIL} | {summary} |
 
-### Command: `{test command}`
-Exit Code: {code}
-Output:
-```
-{output}
-```
-Status: {PASS if code=0, FAIL otherwise}
-
-**Quality Gate**: {PASS / FAIL}
+**Overall**: {PASS/FAIL}
 ```
 
-## Verification Rules by Tag
+## Escalation Triggers
 
-| Tag | Layers Required | Quality Gate |
-|-----|-----------------|--------------|
-| (none) | All 4 | No |
-| [VERIFY] | All 4 | Yes |
-| [CRITICAL] | All 4 | Yes |
-| [OPTIONAL] | Layers 3, 4 only | No |
-| [P] | All 4 | No |
-
-## Automatic Fixes
-
-The system can automatically fix:
-
-1. **Layer 2 failures**: Commit uncommitted files
-2. **Layer 3 failures**: Update tasks.md checkmark
-3. **Layer 4 failures**: Add signal if output looks complete
-
-Cannot automatically fix:
-
-1. **Layer 1 failures**: Requires implementation changes
-2. **Quality gate failures**: Requires code fixes
+Escalate to user when:
+- Same verification layer fails 3 times
+- Quality gate fails and fix is unclear
+- Contradiction cannot be resolved
+- Git state is corrupted

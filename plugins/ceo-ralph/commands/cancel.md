@@ -1,3 +1,6 @@
+---
+description: Cancel the current spec and cleanup
+---
 # /ceo-ralph:cancel
 
 Cancel current spec and cleanup.

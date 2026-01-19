@@ -1,3 +1,7 @@
+---
+description: Pause the execution loop
+---
+
 # /ceo-ralph:pause
 
 Pause the execution loop.

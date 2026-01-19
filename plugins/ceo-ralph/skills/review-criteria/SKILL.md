@@ -1,3 +1,8 @@
+---
+name: review-criteria
+description: Criteria for reviewing Codex worker outputs across 5 dimensions. Use when reviewing code submitted by workers before approval.
+---
+
 # Review Criteria Skill
 
 This skill defines how the CEO (Claude) reviews outputs from Codex workers.

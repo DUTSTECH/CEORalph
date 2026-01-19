@@ -1,3 +1,7 @@
+---
+description: Generate requirements from the research phase
+---
+
 # /ceo-ralph:requirements
 
 Generate requirements from the research phase.

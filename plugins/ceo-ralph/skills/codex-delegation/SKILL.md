@@ -1,3 +1,8 @@
+---
+name: codex-delegation
+description: How to delegate implementation tasks to Codex workers via MCP. Use when executing tasks that require code implementation by GPT Codex workers.
+---
+
 # Codex Delegation Skill
 
 This skill defines how the CEO (Claude) delegates tasks to Codex workers.

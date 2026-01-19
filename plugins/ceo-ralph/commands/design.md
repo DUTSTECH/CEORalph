@@ -1,3 +1,7 @@
+---
+description: Create technical design from requirements
+---
+
 # /ceo-ralph:design
 
 Create technical design from requirements.

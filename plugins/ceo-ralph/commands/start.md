@@ -1,3 +1,7 @@
+---
+description: Start a new spec or resume an existing one
+---
+
 # /ceo-ralph:start
 
 Start a new spec or resume an existing one.

@@ -1,3 +1,7 @@
+---
+description: Resume a paused execution
+---
+
 # /ceo-ralph:resume
 
 Resume a paused execution.

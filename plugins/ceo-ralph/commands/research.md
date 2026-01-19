@@ -1,3 +1,7 @@
+---
+description: Run the research phase for the current spec
+---
+
 # /ceo-ralph:research
 
 Run the research phase for the current spec.
