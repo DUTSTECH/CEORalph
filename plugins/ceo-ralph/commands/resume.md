@@ -1,5 +1,8 @@
 ---
+name: resume
 description: Resume a paused execution
+allowed-tools: Read, Write, Edit, mcp__codex__codex
+timeout: 600000
 ---
 
 # /ceo-ralph:resume

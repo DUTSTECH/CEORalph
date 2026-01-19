@@ -11,6 +11,12 @@ Configure Codex (GPT) for CEO Ralph via Codex CLI MCP.
 
 ## Step 1: Check Codex CLI
 
+**On Windows (PowerShell):**
+```powershell
+Get-Command codex -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; codex --version 2>&1 | Select-Object -First 1
+```
+
+**On macOS/Linux:**
 ```bash
 which codex 2>/dev/null && codex --version 2>&1 | head -1 || echo "CODEX_MISSING"
 ```
@@ -42,7 +48,11 @@ codex login
 
 ## Step 3: Read Current Settings
 
-Read `~/.claude/settings.json` (or treat as `{}` if missing).
+Read settings file:
+- **Windows**: `%USERPROFILE%\.claude\settings.json`
+- **macOS/Linux**: `~/.claude/settings.json`
+
+If the file doesn't exist, treat as `{}`.
 
 ## Step 4: Configure MCP Server
 
@@ -73,7 +83,7 @@ CEO Ralph Setup Status
 ────────────────────────────────────────────
 Codex CLI:     ✓ [version]
 Auth:          ✓ [status]
-MCP Config:    ✓ ~/.claude/settings.json
+MCP Config:    ✓ [path to settings.json]
 ────────────────────────────────────────────
 ```
 

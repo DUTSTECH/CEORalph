@@ -1,5 +1,8 @@
 ---
+name: research
 description: Run the research phase for the current spec
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, mcp__codex__codex
+timeout: 300000
 ---
 
 # /ceo-ralph:research

@@ -1,5 +1,8 @@
 ---
+name: cancel
 description: Cancel the current spec and cleanup
+allowed-tools: Read, Write, Edit, Bash, AskUserQuestion
+timeout: 60000
 ---
 # /ceo-ralph:cancel
 

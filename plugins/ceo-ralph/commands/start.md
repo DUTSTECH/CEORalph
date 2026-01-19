@@ -1,5 +1,8 @@
 ---
+name: start
 description: Start a new spec or resume an existing one
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion
+timeout: 120000
 ---
 
 # /ceo-ralph:start

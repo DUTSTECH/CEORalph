@@ -1,5 +1,8 @@
 ---
+name: requirements
 description: Generate requirements from the research phase
+allowed-tools: Read, Write, Edit, Glob, Grep, mcp__codex__codex, AskUserQuestion
+timeout: 300000
 ---
 
 # /ceo-ralph:requirements

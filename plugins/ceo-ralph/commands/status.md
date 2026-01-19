@@ -1,5 +1,8 @@
 ---
+name: status
 description: Show current spec status and progress
+allowed-tools: Read, Glob
+timeout: 30000
 ---
 
 # /ceo-ralph:status

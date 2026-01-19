@@ -7,5 +7,14 @@
   },
   "repository": "https://github.com/dutsAI/ceo-ralph",
   "license": "MIT",
-  "keywords": ["spec-driven", "delegation", "codex", "orchestration", "autonomous", "multi-model"]
+  "keywords": ["spec-driven", "delegation", "codex", "orchestration", "autonomous", "multi-model"],
+  "claude": {
+    "minVersion": "1.0.0"
+  },
+  "capabilities": {
+    "commands": true,
+    "agents": true,
+    "skills": true,
+    "mcp": true
+  }
 }

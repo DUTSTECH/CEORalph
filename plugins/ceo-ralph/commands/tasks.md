@@ -1,5 +1,8 @@
 ---
+name: tasks
 description: Break design into executable tasks
+allowed-tools: Read, Write, Edit, Glob, Grep, mcp__codex__codex
+timeout: 300000
 ---
 
 # /ceo-ralph:tasks

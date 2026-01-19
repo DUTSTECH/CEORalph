@@ -1,5 +1,8 @@
 ---
+name: execute
 description: Start the execution loop with Codex workers
+allowed-tools: mcp__codex__codex, Read, Write, Edit, Bash, Glob, Grep
+timeout: 600000
 ---
 
 # /ceo-ralph:execute
