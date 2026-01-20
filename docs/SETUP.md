@@ -15,23 +15,23 @@
 
 ## Installation Steps
 
-### Step 1: Clone the Repository
+### Step 1: Clone the Repository (Optional - for development)
 
 ```bash
-git clone https://github.com/dutsAI/ceo-ralph.git
-cd ceo-ralph
+git clone https://github.com/DUTSTECH/ceoralph.git
+cd ceoralph
 ```
 
-### Step 2: Install MCP Server Dependencies
+### Step 2: Install the Plugin
 
 In Claude Code:
 
 ```bash
 # Add the marketplace
-/plugin marketplace add dutstech/ceoralph
+/plugin marketplace add https://github.com/DUTSTECH/ceoralph
 
 # Install the plugin
-/plugin install ceo-ralph
+/plugin install ceo-ralph@dutstech-ceoralph
 ```
 
 ### Step 3: Install & Authenticate Codex CLI
@@ -76,7 +76,7 @@ Restart Claude Code to load the MCP server and plugin.
 
 ### Plugin Configuration
 
-In `plugins/ceo-ralph/.claude-plugin/plugin.json`:
+In `.claude-plugin/plugin.json`:
 
 ```json
 {
