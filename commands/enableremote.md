@@ -67,5 +67,5 @@ If still missing, stop and ask the user to install manually.
 If `cloudflared` is installed, run:
 
 ```bash
-python remote-ui/remote_ui.py enable
+python "$CLAUDE_PLUGIN_ROOT/remote-ui/remote_ui.py" enable
 ```
