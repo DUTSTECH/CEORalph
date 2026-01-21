@@ -21,25 +21,15 @@ One-shot command to set up the Remote UI, start it locally, and expose it via a 
 - Launches Cloudflare Quick Tunnel
 - Prints the public HTTPS URL
  
-Requires `cloudflared` installed.
+Requires `cloudflared` installed (auto-checked below).
 
-## Command
-
-```bash
-python remote-ui/remote_ui.py enable
-```
-
-## Cloudflare Check (Required)
-
-Before running, check if `cloudflared` is installed:
+## Step 1: Check Cloudflared
 
 ```bash
-cloudflared --version
+cloudflared --version 2>&1 || echo "CLOUDFLARED_MISSING"
 ```
 
-If it returns a version, continue with `python remote-ui/remote_ui.py enable`.
-
-If missing, ask the user to install it:
+If you see `CLOUDFLARED_MISSING`, ask the user to install it and stop here.
 
 **Windows (PowerShell):**
 ```powershell
@@ -60,4 +50,12 @@ Then re-run:
 
 ```
 /ceo-ralph:enableremote
+```
+
+## Step 2: Enable Remote UI
+
+If `cloudflared` is installed, run:
+
+```bash
+python remote-ui/remote_ui.py enable
 ```
