@@ -78,11 +78,11 @@ Show results:
 
 ```
 CEO Ralph Setup Status
-────────────────────────────────────────────
-Codex CLI:     ✓ [version]
-Auth:          ✓ [status]
-MCP Config:    ✓ [path to settings.json]
-────────────────────────────────────────────
+==============================
+Codex CLI     : ✓ [version]
+Auth          : ✓ [status]
+MCP Config    : ✓ [path]
+==============================
 ```
 
 If any check fails, report the issue and how to fix it.

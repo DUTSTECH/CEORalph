@@ -29,6 +29,7 @@ If not available:
 
 1. Check `./specs/$spec/` directory exists
 2. Check `./specs/$spec/tasks.md` exists. If not: error "Tasks not found. Run /ceo-ralph:tasks first."
+3. Ensure `./specs/$spec/.progress.md` exists. If missing, create a minimal stub with the goal and phase.
 
 ## Parse Arguments
 
@@ -95,3 +96,4 @@ ALL_TASKS_COMPLETE
 - Codex is the **only** executor. Claude remains coordinator.
 - Each task is executed in a fresh Codex call to preserve clean context.
 - [VERIFY] tasks should be delegated to qa-engineer (as in spec-executor rules).
+- Avoid spinners or overwriting lines; print plain, newline-delimited status to keep terminal readable.

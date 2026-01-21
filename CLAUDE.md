@@ -79,6 +79,10 @@ Quality checkpoints inserted every 2-3 tasks throughout all phases.
 
 Spec-executor must output `TASK_COMPLETE` for coordinator to advance. Coordinator outputs `ALL_TASKS_COMPLETE` when done. If task fails, retries up to 5 times then blocks with error.
 
+### Output Hygiene
+
+Use plain, line-by-line status output. Avoid spinners, ANSI cursor controls, or rewriting lines to keep terminal output readable.
+
 ### Dependencies
 
 Requires Codex MCP plugin: `/ceo-ralph:setup`

@@ -245,14 +245,16 @@ Store in `.ralph-state.json` as `commitSpec`.
 ### Normal Mode (no --quick)
 
 1. Create or resume spec
-2. If new, start research phase
+2. Ensure `.progress.md` and `.ralph-state.json` exist (create minimal stubs if missing)
+3. If new, start research phase
 3. STOP after each phase for approval
 
 ### Quick Mode (--quick)
 
 1. Create or resume spec
-2. Auto-generate research, requirements, design, tasks via `plan-synthesizer`
-3. Start execution immediately with `/ceo-ralph:implement`
+2. Ensure `.progress.md` and `.ralph-state.json` exist (create minimal stubs if missing)
+3. Auto-generate research, requirements, design, tasks via `plan-synthesizer`
+4. Start execution immediately with `/ceo-ralph:implement`
 
 ## Output
 

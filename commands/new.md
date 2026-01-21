@@ -115,6 +115,10 @@ The goal MUST be captured before proceeding:
    Complete research, then proceed to requirements
    ```
 
+6. If any of the files above are missing after creation, create empty stubs so subsequent phases never fail on missing files:
+   - `.ralph-state.json`
+   - `.progress.md`
+
 ## Execute Research Phase
 
 If NOT `--skip-research`:
