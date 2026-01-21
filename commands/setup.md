@@ -44,8 +44,14 @@ codex login
 
 ## Step 3: Read Current Settings
 
-Read settings file:
-- **Windows**: `%USERPROFILE%\.claude\settings.json`
+Resolve the user profile path first (do not guess usernames):
+
+- **Windows (PowerShell)**: `$env:USERPROFILE`
+- **Windows (cmd.exe)**: `%USERPROFILE%`
+- **Windows (Git Bash)**: `powershell -NoProfile -Command "$env:USERPROFILE"` or `cmd.exe /c echo %USERPROFILE%`
+
+Then read the settings file:
+- **Windows**: `<USERPROFILE>\.claude\settings.json`
 - **macOS/Linux**: `~/.claude/settings.json`
 
 If the file doesn't exist, treat as `{}`.
