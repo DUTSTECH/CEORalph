@@ -64,8 +64,7 @@ If still missing, stop and ask the user to install manually.
 
 ## Step 2: Enable Remote UI
 
-If `cloudflared` is installed, resolve the Remote UI script path and run it in the foreground.
-This command prompts for a password, so it must run with an interactive TTY (not in the background).
+If `cloudflared` is installed, prompt for a password in Claude Code and pass it via `--password`.
 
 ```bash
 SCRIPT=""
@@ -94,10 +93,13 @@ if [ -z "$SCRIPT" ]; then
   echo "REMOTE_UI_SCRIPT_NOT_FOUND"
   exit 1
 fi
-python "$SCRIPT" enable
 ```
 
-If the command can't prompt (no TTY), instruct the user to run the printed command in a separate terminal and keep it open.
+Ask the user for a password (min 12 chars). Then run:
+
+```bash
+python "$SCRIPT" enable --password "$PASSWORD"
+```
 
 ## Step 3: Verify Configuration
 
