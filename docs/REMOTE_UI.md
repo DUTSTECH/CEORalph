@@ -21,7 +21,7 @@ The Remote UI lets CEO Ralph request approvals and collect user input from a web
    ```bash
    /ceo-ralph:enableremote
    ```
-   Verify the public URL is printed and saved to `~/.ceo-ralph/remote-ui/config.json`.
+   Verify the public URL is printed and saved to `~/.ceo-ralph/remote-ui/config.json`. Keep the terminal open while the tunnel runs.
 
 2. Or run step-by-step:
 
