@@ -425,6 +425,14 @@ Related specs found:
 Next: Review research.md, then run /ceo-ralph:requirements
 ```
 
+## Output Formatting
+
+To avoid overlapping terminal UI, keep the status output plain and narrow:
+- Use simple bullet lines
+- Avoid tables and box-drawing characters
+- Emojis are OK in headings or bullets
+- No spinners or line-overwrites
+
 ## Stop
 
 <mandatory>

@@ -180,3 +180,11 @@ Output: ./specs/$spec/requirements.md
 
 Next: Review requirements.md, then run /ceo-ralph:design
 ```
+
+## Output Formatting
+
+To avoid overlapping terminal UI, keep the status output plain and narrow:
+- Use simple bullet lines
+- Avoid tables and box-drawing characters
+- Emojis are OK in headings or bullets
+- No spinners or line-overwrites

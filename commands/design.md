@@ -186,3 +186,11 @@ Output: ./specs/$spec/design.md
 
 Next: Review design.md, then run /ceo-ralph:tasks
 ```
+
+## Output Formatting
+
+To avoid overlapping terminal UI, keep the status output plain and narrow:
+- Use simple bullet lines
+- Avoid tables and box-drawing characters
+- Emojis are OK in headings or bullets
+- No spinners or line-overwrites
