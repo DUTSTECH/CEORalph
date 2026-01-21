@@ -29,11 +29,18 @@ Requires `cloudflared` installed (auto-checked below).
 cloudflared --version 2>&1 || echo "CLOUDFLARED_MISSING"
 ```
 
-If you see `CLOUDFLARED_MISSING`, ask the user to install it and stop here.
+If you see `CLOUDFLARED_MISSING`, offer to install it automatically.
+
+Ask the user:
+```
+Cloudflared is missing. Install it now? (yes/no)
+```
+
+If yes, install based on OS:
 
 **Windows (PowerShell):**
 ```powershell
-winget install --id Cloudflare.cloudflared
+powershell -NoProfile -Command "winget install --id Cloudflare.cloudflared -e"
 ```
 
 **macOS (Homebrew):**
@@ -46,11 +53,14 @@ brew install cloudflared
 sudo apt-get update && sudo apt-get install -y cloudflared
 ```
 
-Then re-run:
+If the OS is unknown, ask the user to choose an install method and provide the command.
 
+Re-check:
+```bash
+cloudflared --version 2>&1 || echo "CLOUDFLARED_MISSING"
 ```
-/ceo-ralph:enableremote
-```
+
+If still missing, stop and ask the user to install manually.
 
 ## Step 2: Enable Remote UI
 
