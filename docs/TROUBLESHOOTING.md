@@ -81,7 +81,7 @@ If you see:
 Stop hook error: Failed with non-blocking status code: -bash: line 1: session_id:...: command not found
 ```
 
-Update the plugin to v1.0.5 or newer and restart Claude Code. This version runs a wrapper script and avoids quoting issues on Windows.
+Update the plugin to v1.0.6 or newer and restart Claude Code. This version runs the wrapper script via `bash -lc` so stdin isn't executed as commands.
 
 ---
 
