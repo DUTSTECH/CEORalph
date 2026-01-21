@@ -59,6 +59,8 @@ This error occurs when you have an old plugin installation (v1.x) that reference
 
 If the error references `smart-ralph/ralph-specum`, uninstall that plugin or remove its cached folder in `~/.claude/plugins/cache/` to stop the extra hook from running.
 
+**Avoid conflicting plugins**: Do not run CEO Ralph alongside `smart-ralph` or the `claude-delegator` plugin. Multiple orchestration plugins can register overlapping hooks and workflows, which leads to confusing output and hard-to-debug errors.
+
 ---
 
 ### "stop-watcher.sh: No such file or directory" (Windows paths)
