@@ -29,7 +29,7 @@ TUNNEL_URL_PATTERN = re.compile(r"https://[a-z0-9.-]+\.trycloudflare\.com")
 
 
 def utc_now():
-    return dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
 def b64encode(raw_bytes):
