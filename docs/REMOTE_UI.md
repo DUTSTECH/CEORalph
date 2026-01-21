@@ -22,6 +22,7 @@ The Remote UI lets CEO Ralph request approvals and collect user input from a web
    /ceo-ralph:enableremote
    ```
    Verify the public URL is printed and saved to `~/.ceo-ralph/remote-ui/config.json`. Keep the command running while the tunnel is active.
+   If you stop the process, the Cloudflare URL will show a host error.
 
 2. Or run step-by-step:
 

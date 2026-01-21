@@ -65,6 +65,7 @@ If still missing, stop and ask the user to install manually.
 ## Step 2: Enable Remote UI
 
 If `cloudflared` is installed, prompt for a password in Claude Code and pass it via `--password`.
+Do not echo the password back to the user.
 
 ```bash
 SCRIPT=""
@@ -118,3 +119,8 @@ except FileNotFoundError:
     print("config_missing")
 PY
 ```
+
+## Important
+
+- Leave the Remote UI process running. Do NOT kill the background task, or the tunnel will show a host error.
+- If you need to stop it later, use the terminal's process list and terminate `cloudflared` and the `remote_ui.py` process.

@@ -265,6 +265,7 @@ cat ceoralph/hooks/hooks.json | jq .
    ```bash
    python remote-ui/remote_ui.py set-public-url https://your-url.trycloudflare.com
    ```
+4. If the URL shows a Cloudflare host error, the local server or tunnel process likely stopped. Re-run `/ceo-ralph:enableremote` and keep it running.
 
 ---
 
