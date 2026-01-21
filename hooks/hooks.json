@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -lc \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/stop-runner.sh\""
+            "command": "bash -lc \"ROOT=\\\"${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PLUGIN_DIR:-}}\\\"; if [ -z \\\"$ROOT\\\" ]; then echo \\\"CEO Ralph cleanup: plugin root not set\\\"; exit 0; fi; \\\"$ROOT/hooks/scripts/stop-runner.sh\\\"\""
           }
         ]
       }

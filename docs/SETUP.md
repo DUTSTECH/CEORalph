@@ -34,6 +34,8 @@ In Claude Code:
 /plugin install ceo-ralph@dutstech-ceoralph
 ```
 
+**Disclaimer**: Do not install CEO Ralph alongside `smart-ralph` or `claude-delegator`. Running multiple orchestration plugins can register overlapping hooks and produce confusing output or errors.
+
 ### Step 3: Install & Authenticate Codex CLI
 
 ```bash

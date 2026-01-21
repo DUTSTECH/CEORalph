@@ -236,7 +236,7 @@ After max iterations, the loop stops. Check `.progress.md` for errors. Fix manua
 **Resume existing spec?**
 Just `/ceo-ralph:start` - it auto-detects and continues where you left off.
 
-**More issues?** See the full [Troubleshooting Guide](TROUBLESHOOTING.md).
+**More issues?** See the full [Troubleshooting Guide](docs/TROUBLESHOOTING.md).
 
 ---
 
@@ -255,6 +255,8 @@ PRs welcome! This project is friendly to first-time contributors.
 ## Credits
 
 - [Ralph agentic loop pattern](https://ghuntley.com/ralph/) by Geoffrey Huntley
+- [Smart Ralph](https://github.com/tzachbon/smart-ralph)
+- [Claude Delegator](https://github.com/tylerprogramming/claude-delegator)
 - Built for [Claude Code](https://claude.ai/code)
 - Inspired by every developer who wished their AI could just figure out the whole feature
 
