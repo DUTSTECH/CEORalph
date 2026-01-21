@@ -120,6 +120,15 @@ If an error occurs:
    - What was tried
    - What's needed to proceed
 
+## Context Compaction
+
+Use `/compact` to manage context size, but only at safe boundaries:
+
+- **Safe times**: After a phase is finalized and logged to `.progress.md`, or right after a task finishes and `TASK_COMPLETE` is recorded.
+- **Never**: mid-task, mid-tool output, or while waiting on an approval response.
+- If a context meter is visible and near full (e.g., >80-90%), prompt `/compact` before starting the next phase or delegating the next task.
+- When compaction is needed, explicitly ask Claude to run `/compact`; do not auto-compact in the middle of execution.
+
 ## Integration Points
 
 - **MCP Codex Worker**: For delegating implementation tasks

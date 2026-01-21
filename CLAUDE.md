@@ -84,6 +84,10 @@ Spec-executor must output `TASK_COMPLETE` for coordinator to advance. Coordinato
 
 Use plain, line-by-line status output. Avoid spinners, ANSI cursor controls, or rewriting lines to keep terminal output readable.
 
+### Context Compaction
+
+Trigger `/compact` only at safe boundaries (after a phase is approved and logged to `.progress.md`, or right after a task finishes). If a context meter is visible and near full (e.g., >80-90%), prompt `/compact` before starting the next phase or delegating the next task. Never compact mid-task, mid-tool output, or while waiting on approvals.
+
 ### Dependencies
 
 Requires Codex MCP plugin: `/ceo-ralph:setup`
