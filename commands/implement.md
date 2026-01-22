@@ -84,6 +84,11 @@ After Codex completes:
 - Update .progress.md
 - Commit changes if required by the task
 
+If Codex MCP returns `AbortError`:
+- Re-run the task once with reduced context (only Files list + task block + .progress.md)
+- Log the failure in `.progress.md` and `codex-log.md`
+- If it fails again, stop and ask the user
+
 ## Completion
 
 When taskIndex >= totalTasks and all tasks are [x], output:

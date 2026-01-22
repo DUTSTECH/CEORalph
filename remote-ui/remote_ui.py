@@ -361,11 +361,13 @@ LOGIN_HTML = """<!doctype html>
     label { display: block; margin-bottom: 8px; font-weight: 600; }
     input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #d7cdbf; font-family: inherit; background: #faf7f1; }
     button { margin-top: 16px; padding: 12px 14px; border-radius: 999px; border: none; background: #1d1f1f; color: #f6f2ea; font-weight: 700; cursor: pointer; width: 100%; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; }
+    .error { background: #fbe9e7; border: 1px solid #f2c1bc; color: #7a271a; padding: 10px 12px; border-radius: 10px; margin: 12px 0; font-size: 13px; }
   </style>
 </head>
 <body>
   <main>
     <h1>Board Portal Access</h1>
+    {error_block}
     <form method="post" action="/login">
       <label for="password">Password</label>
       <input id="password" name="password" type="password" required>
@@ -452,7 +454,13 @@ class RemoteUIHandler(BaseHTTPRequestHandler):
         clean_sessions()
         path = urllib.parse.urlparse(self.path).path
         if path == "/login":
-            html_response(self, LOGIN_HTML)
+            query = urllib.parse.urlparse(self.path).query
+            params = urllib.parse.parse_qs(query)
+            error = params.get("error", [""])[0]
+            error_block = ""
+            if error:
+                error_block = '<div class="error">Invalid password. Please try again.</div>'
+            html_response(self, LOGIN_HTML.format(error_block=error_block))
             return
         if path == "/":
             if not self._authenticated():
@@ -483,7 +491,9 @@ class RemoteUIHandler(BaseHTTPRequestHandler):
                 self.send_header("Location", "/")
                 self.end_headers()
             else:
-                html_response(self, LOGIN_HTML, status=HTTPStatus.UNAUTHORIZED)
+                self.send_response(HTTPStatus.FOUND)
+                self.send_header("Location", "/login?error=1")
+                self.end_headers()
             return
         if path.startswith("/api/requests/") and path.endswith("/decision"):
             if not self._require_auth():
