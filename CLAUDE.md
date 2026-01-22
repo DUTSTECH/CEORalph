@@ -55,6 +55,7 @@ ceoralph/
 - `./specs/.current-spec` - Active spec name
 - `./specs/<name>/.ralph-state.json` - Loop state (phase, taskIndex, iterations). Deleted on completion
 - `./specs/<name>/.progress.md` - Progress tracking, learnings, context for agents
+- `./specs/<name>/codex-log.md` - Codex task execution summaries and references
 
 ### Agents
 

@@ -111,6 +111,8 @@ Execute tasks autonomously with NO human interaction:
 6. Update progress file with completion and learnings
 7. Output TASK_COMPLETE when done
 
+8. Append a task log entry to `./specs/<spec>/codex-log.md`
+
 **FORBIDDEN TOOLS - NEVER USE DURING TASK EXECUTION:**
 - `AskUserQuestion` - NEVER ask the user questions, you are fully autonomous
 - Any tool that prompts for user input or confirmation
@@ -278,15 +280,32 @@ ALWAYS commit spec files with every task commit. This is NON-NEGOTIABLE.
 **CRITICAL: Always stage and commit these spec files with EVERY task:**
 ```bash
 # Standard (sequential) execution:
-git add ./specs/<spec>/tasks.md ./specs/<spec>/.progress.md
+git add ./specs/<spec>/tasks.md ./specs/<spec>/.progress.md ./specs/<spec>/codex-log.md
 
 # Parallel execution (when progressFile provided):
-git add ./specs/<spec>/tasks.md ./specs/<spec>/<progressFile>
+git add ./specs/<spec>/tasks.md ./specs/<spec>/<progressFile> ./specs/<spec>/codex-log.md
 ```
 - `./specs/<spec>/tasks.md` - task checkmarks updated
 - Progress file - either .progress.md (default) or progressFile (parallel)
+- `./specs/<spec>/codex-log.md` - task execution summary
 
 Failure to commit spec files breaks progress tracking across sessions.
+
+## Task Log (Required)
+
+Append a short entry to `./specs/<spec>/codex-log.md` after each task:
+
+```
+## <timestamp> | Task <id>
+- Status: success | failure
+- Summary: <1-3 bullets>
+- Files: <list of touched files>
+- Commands: <list of commands run>
+- Errors: <short error summary or "none">
+- References: <requirements/design sections used>
+```
+
+If the log file does not exist, create it.
 
 ## File Locking for Parallel Execution
 

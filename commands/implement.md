@@ -79,6 +79,7 @@ mcp__codex__codex({
 
 After Codex completes:
 - Verify output matches "Done when" criteria
+- Read `./specs/$spec/codex-log.md` for a concise summary and references
 - Update tasks.md with [x]
 - Update .progress.md
 - Commit changes if required by the task
@@ -96,4 +97,5 @@ ALL_TASKS_COMPLETE
 - Codex is the **only** executor. Claude remains coordinator.
 - Each task is executed in a fresh Codex call to preserve clean context.
 - [VERIFY] tasks should be delegated to qa-engineer (as in spec-executor rules).
+- Avoid polling or tailing live task output. Rely on updated files (`tasks.md`, `.progress.md`, `codex-log.md`) to reduce terminal flicker.
 - Avoid spinners or overwriting lines; print plain, newline-delimited status to keep terminal readable.
