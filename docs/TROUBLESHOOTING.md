@@ -266,6 +266,17 @@ cat ceoralph/hooks/hooks.json | jq .
    python remote-ui/remote_ui.py set-public-url https://your-url.trycloudflare.com
    ```
 4. If the URL shows a Cloudflare host error, the local server or tunnel process likely stopped. Re-run `/ceo-ralph:enableremote` and keep it running.
+5. If the URL shows a 502 Bad Gateway, the tunnel is up but the origin is unreachable. Confirm the local server responds:
+   ```bash
+   python - <<'PY'
+   import urllib.request
+   try:
+       urllib.request.urlopen("http://127.0.0.1:8123", timeout=2)
+       print("local_ok")
+   except Exception as exc:
+       print("local_error:", exc.__class__.__name__)
+   PY
+   ```
 
 ---
 

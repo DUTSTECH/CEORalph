@@ -121,6 +121,21 @@ except FileNotFoundError:
 PY
 ```
 
+Also confirm the local server is responding:
+
+```bash
+python - <<'PY'
+import urllib.request
+try:
+    urllib.request.urlopen("http://127.0.0.1:8123", timeout=2)
+    print("local_ok")
+except Exception as exc:
+    print("local_error:", exc.__class__.__name__)
+PY
+```
+
+If `local_ok` fails, the tunnel will show a 502. Fix local server first.
+
 ## Important
 
 - Leave the Remote UI process running. Do NOT kill the background task, or the tunnel will show a host error.
