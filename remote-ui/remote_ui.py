@@ -47,6 +47,8 @@ def ensure_dir(path):
 
 def load_json(path, default):
     try:
+        if "../" in path or "..\\" in path:
+            raise Exception("Invalid file path")
         with open(path, "r", encoding="utf-8") as handle:
             return json.load(handle)
     except FileNotFoundError:
@@ -56,6 +58,8 @@ def load_json(path, default):
 def atomic_write_json(path, data):
     ensure_dir(os.path.dirname(path))
     tmp_path = f"{path}.tmp"
+    if "../" in tmp_path or "..\\" in tmp_path:
+        raise Exception("Invalid file path")
     with open(tmp_path, "w", encoding="utf-8") as handle:
         json.dump(data, handle, indent=2, sort_keys=True)
         handle.write("\n")
